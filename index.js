@@ -12,6 +12,7 @@ const addNode = (node1,node2) =>{
     let aux = node1.next
     node1.next = node2
     return node2.next= aux
+
 }
 
 const query =(value,node) =>{
@@ -44,10 +45,10 @@ const removeNode = (value,node) =>{
         }
         return true  
     }
-    // if(!node.next){             //remove if last
-    //     delete node.value
-    //     delete node.next
-    // }
+    if(!node.next){             //remove if last
+        delete node.value
+        delete node.next
+    }
     else{
         return removeNode(value,node.next)
     }
@@ -66,4 +67,4 @@ addNode(node2,node3);
 console.log('Linked List', node1);
 console.log('Busca 3 ?', query(3,node1));
 console.log('Busca 5 ?', query(5,node1));
-console.log('Remove item ?', removeNode(3,node1));  // Uncomment to remove items from the list 
+// console.log('Remove item ?', removeNode(3,node1));  // Uncomment to remove items from the list 
